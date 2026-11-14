@@ -863,7 +863,7 @@ function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clea
 async function copyText(text,label){
  try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else throw 0}
  catch(e){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:-999px;top:0';document.body.appendChild(ta);ta.focus();ta.select();
-  let ok=false;try{ok=document.execCommand('copy')}catch(_){}ta.remove();if(!ok){toast('複製失敗，請手動選取');return}}
+  let ok=false;try{ok=document.execCommand('copy')}catch(_){}ta.remove();if(!ok){toast('複製失敗，請手動選取 建議使用 QR code');return}}
  toast('已複製：'+(label||'內容'))}
 function b64u(u8){let s='';for(let i=0;i<u8.length;i++)s+=String.fromCharCode(u8[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
 function unb64u(s){s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
