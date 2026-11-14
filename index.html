@@ -2,6 +2,16 @@
 <html lang="zh-Hant-TW"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>青魚數學 Qene Math</title>
+<meta name="theme-color" content="#0a7ea4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1a21" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="青魚數學">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
 <style>
 :root{--bg:#f3f8fb;--card:#fff;--tx:#12303f;--mu:#5b7482;--pr:#0a7ea4;--pr2:#e1f3f9;--bd:#d5e3ea;--ok:#177a4a;--er:#b3261e;--wa:#fff4d6;--wt:#6b4d00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a21;--card:#16262f;--tx:#e6f1f6;--mu:#93aab6;--pr:#4cc3e8;--pr2:#17323d;--bd:#28404c;--ok:#5fd394;--er:#ff8a80;--wa:#3a3216;--wt:#f3d98a}}
@@ -1142,5 +1152,8 @@ g('#wlGuide').onclick=()=>{mark();m.hidden=true;g('#guideBtn').click()};
 g('#discBtn').onclick=show;
 if(!seen)show();
 })();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})});}
 </script>
 </body></html>
